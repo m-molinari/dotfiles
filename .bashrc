@@ -19,6 +19,11 @@ shopt -s histappend
 HISTSIZE=10000
 HISTFILESIZE=20000
 
+#
+# Ignore certain command from history
+#
+export HISTIGNORE="cd*:ls:ls -la:ls -a"
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -52,9 +57,17 @@ fi
 
 PS1="\[\e[32m\][\[\e[m\]\[\e[32m\]\u\[\e[m\]\[\e[33m\]@\[\e[m\]\[\e[1;36m\]\h\[\e[m\]:\[\e[35m\]\w\[\e[m\]\[\e[36m\]]\[\e[m\]\[\e[0;35m\]\\$\[\e[m\] "
 
+#
 # neofetch
+#
 neofetch --disable resolution os wm theme icons terminal
 
+#
 # source aliases
+#
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
+#
+# ssh-add
+#
+ssh-add -l > /dev/null || ssh-add
