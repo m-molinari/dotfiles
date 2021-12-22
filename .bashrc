@@ -55,7 +55,6 @@ PS1="\[\e[32m\][\[\e[m\]\[\e[32m\]\u\[\e[m\]\[\e[33m\]@\[\e[m\]\[\e[1;36m\]\h\[\
 # neofetch
 neofetch --disable resolution os wm theme icons terminal
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# source aliases
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+
