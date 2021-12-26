@@ -72,7 +72,7 @@ neofetch --disable resolution os wm theme icons terminal
 export GREP_COLOR="1;36"
 
 # less colored output
-export LESS="-R"                                            
+export LESS="-R"
 [ -f ~/.dir_colors ] && eval $(dircolors -b ~/.dir_colors)
 
 #
