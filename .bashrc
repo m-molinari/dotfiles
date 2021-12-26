@@ -65,8 +65,14 @@ neofetch --disable resolution os wm theme icons terminal
 #
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
-# custom colors
+# colors
 #
+
+# grep colored ouput
+export GREP_COLOR="1;36"
+
+# less colored output
+export LESS="-R"                                            
 [ -f ~/.dir_colors ] && eval $(dircolors -b ~/.dir_colors)
 
 #
