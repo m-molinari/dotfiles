@@ -52,17 +52,27 @@ TERM xterm-color
 TERM xterm-debian
 
 # Colorization should always be enabled (yes or all),
-COLOR           yes
-NORMAL		00		# Normal
-FILE		00;37		# File
-DIR		01;34		# Directory
-LINK		01;35		# Symbolic link
-FIFO		00;33		# Fifo
-SOCK		01;35		# Socket
-EXEC		01;32		# Exec
-BLK		01;33;40	# Block device
-CHR		01;35;40	# Character device special
-ORPHAN		01;30		# Orphan
+COLOR   		yes
+
+
+NORMAL			00		# Normal
+FILE			00;37		# File
+DIR			01;34		# Directory
+LINK			01;35		# Symbolic link
+FIFO			40;33		# Fifo
+SOCK			01;40;35	# Socket
+EXEC			01;32		# Exec
+BLK			41;33;40	# Block device
+CHR			40;33;01	# character device driver
+SETUID			37;41		# file that is setuid (u+s)
+STICKY_OTHER_WRITABLE	34;42		# dir that is sticky and other-writable (+t,o+w)
+STICKY			37;44		# dir with the sticky bit set (+t) and not other-writable
+OTHER_WRITABLE		30;42		# dir that is other-writable (o+w) and not sticky
+CAPABILITY		30;41		# file with capability
+ORPHAN			40;31;01	# symlink to nonexistent file, or non-statable file
+MISSING			01;05;37;41 	# non-existent file linked to
+SETGID			30;43		# file that is setgid (g+s)
+MULTIHARDLINK		01;04		# regular file with more than one link
 
 # archives red
 #
