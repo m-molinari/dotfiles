@@ -53,27 +53,16 @@ TERM xterm-debian
 
 # Colorization should always be enabled (yes or all),
 COLOR           yes
-
-# Normal
-NORMAL		00
-# Exec
-EXEC		01;32
-# Orphan
-ORPHAN		01;30
-# Symbolic link
-LINK		01;35
-# Block
-BLK		01;33;40
-# Directory
-DIR		01;34
-# File
-FILE		00;37
-# Character device special
-CHR		01;35;40
-# Fifo
-FIFO		00;33
-# Socket
-SOCK		01;35
+NORMAL		00		# Normal
+FILE		00;37		# File
+DIR		01;34		# Directory
+LINK		01;35		# Symbolic link
+FIFO		00;33		# Fifo
+SOCK		01;35		# Socket
+EXEC		01;32		# Exec
+BLK		01;33;40	# Block device
+CHR		01;35;40	# Character device special
+ORPHAN		01;30		# Orphan
 
 # archives red
 #
