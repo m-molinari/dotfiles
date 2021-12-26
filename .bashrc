@@ -57,15 +57,17 @@ fi
 
 PS1="\[\e[32m\][\[\e[m\]\[\e[32m\]\u\[\e[m\]\[\e[33m\]@\[\e[m\]\[\e[1;36m\]\h\[\e[m\]:\[\e[35m\]\w\[\e[m\]\[\e[36m\]]\[\e[m\]\[\e[0;35m\]\\$\[\e[m\] "
 
-#
 # neofetch
 #
 neofetch --disable resolution os wm theme icons terminal
 
-#
 # source aliases
 #
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
+
+# custom colors
+#
+[ -f ~/.dir_colors ] && eval $(dircolors -b ~/.dir_colors)
 
 #
 # ssh-add
