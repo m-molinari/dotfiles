@@ -1,5 +1,8 @@
+#
 # Configuration file for dircolors
+#
 
+# terminal-type
 TERM Eterm
 TERM ansi
 TERM color-xterm
@@ -48,11 +51,29 @@ TERM xterm-88color
 TERM xterm-color
 TERM xterm-debian
 
-# Specifies
-# that colorization should always be enabled (yes or all),
-# never enabled (no or none), or enabled only if the output
-# is a terminal (tty).  The default is no.
-COLOR yes
+# Colorization should always be enabled (yes or all),
+COLOR           yes
+
+# Normal
+NORMAL		00
+# Exec
+EXEC		01;32
+# Orphan
+ORPHAN		01;30
+# Symbolic link
+LINK		01;35
+# Block
+BLK		01;33;40
+# Directory
+DIR		01;34
+# File
+FILE		00;37
+# Character device special
+CHR		01;35;40
+# Fifo
+FIFO		00;33
+# Socket
+SOCK		01;35
 
 # archives red
 #
