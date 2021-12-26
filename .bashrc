@@ -65,6 +65,10 @@ neofetch --disable resolution os wm theme icons terminal
 #
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
+# functions
+#
+[ -f ~/.bash_functions ] && source ~/.bash_functions
+
 # colors
 #
 
