@@ -275,3 +275,6 @@ bindsym $mod+x exec /home/$USER/.config/i3lock/lock.sh
 # Windows compose
 exec_always picom -f
 
+# Default Workaspace Layout
+workspace_layout tabbed
+
