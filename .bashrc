@@ -66,6 +66,7 @@ neofetch --disable resolution os wm theme icons terminal
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 # private aliases
+#
 [ -f ~/.my_aliases ] && source ~/.my_aliases
 
 # functions
@@ -81,7 +82,6 @@ export LESS="-R"
 # custom dir colors
 [ -f ~/.dir_colors ] && eval $(dircolors -b ~/.dir_colors)
 
-#
 # ssh-add
 #
-ssh-add -l > /dev/null || ssh-add
+#ssh-add -l > /dev/null || ssh-add

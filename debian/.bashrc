@@ -130,6 +130,7 @@ neofetch --disable resolution os wm theme icons terminal
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 # private aliases
+#
 [ -f ~/.my_aliases ] && source ~/.my_aliases
 
 # functions
@@ -137,10 +138,13 @@ neofetch --disable resolution os wm theme icons terminal
 [ -f ~/.bash_functions ] && source ~/.bash_functions
 
 # grep colored ouput
+#
 export GREP_COLOR="1;36"
 
 # less colored output
+#
 export LESS="-R"
 
 # custom dir colors
+#
 [ -f ~/.dir_colors ] && eval $(dircolors -b ~/.dir_colors)
