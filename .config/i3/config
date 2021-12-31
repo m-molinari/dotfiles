@@ -42,12 +42,18 @@ exec --no-startup-id nm-applet
 #bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # change volume or toggle mute
+
 #bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
 bindsym $mod+F3 exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
 #bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym $mod+F2 exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
 #bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym $mod+F1 exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+
+# manage volume page_up page_down
+bindsym $mod+Page_Up exec --no-startup-id amixer -q set Master 3%+ -q
+bindsym $mod+Page_Down exec --no-startup-id amixer -q set Master 3%- -q
+bindsym $mod+End exec --no-startup-id amixer -q set Master toggle
 
 # Screen brightness controls
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -196,10 +202,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# gestione volume
-bindsym $mod+Page_Up exec --no-startup-id amixer -q set Master 3%+ -q
-bindsym $mod+Page_Down exec --no-startup-id amixer -q set Master 3%- -q
-bindsym $mod+End exec --no-startup-id amixer -q set Master toggle
 
 # Window Colors
 #set $wd_bgclr		#
