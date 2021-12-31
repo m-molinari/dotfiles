@@ -239,7 +239,7 @@ exec_always setxkbmap it
 exec_always  /home/$USER/screenlayout/virtual.sh
 
 # Wallpaper
-exec_always feh --bg-fill /home/$USER/Pictures/archlinux.jpg
+exec_always feh --bg-fill /usr/share/backgrounds/archlinux/small.png
 
 # Keybind for lock screen
 bindsym $mod+x exec i3lock
