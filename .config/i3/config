@@ -49,6 +49,11 @@ bindsym $mod+F2 exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blo
 #bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym $mod+F1 exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 
+# volume Page_Up Page_Down 
+#bindsym $mod+Page_Up exec --no-startup-id amixer -q set Master 3%+ -q
+#bindsym $mod+Page_Down exec --no-startup-id amixer -q set Master 3%- -q
+#bindsym $mod+End exec --no-startup-id amixer -q set Master toggle
+
 # Screen brightness controls
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
@@ -196,10 +201,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# gestione volume
-bindsym $mod+Page_Up exec --no-startup-id amixer -q set Master 3%+ -q
-bindsym $mod+Page_Down exec --no-startup-id amixer -q set Master 3%- -q
-bindsym $mod+End exec --no-startup-id amixer -q set Master toggle
 
 # Window Colors
 #set $wd_bgclr		#
@@ -253,7 +254,7 @@ exec_always setxkbmap it
 exec_always  /home/$USER/screenlayout/virtual.sh
 
 # Wallpaper
-exec_always feh --bg-fill /home/$USER/Pictures/archlinux.jpg
+exec_always feh --bg-fill /usr/share/backgrounds/archlinux/small.png
 
 # Keybind for lock screen
 # bindsym $mod+x exec i3lock
