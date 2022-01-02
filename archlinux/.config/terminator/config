@@ -4,6 +4,8 @@
   [[default]]
     show_titlebar = false
     background_color = "#282828"
+    background_darkness = 0.91
+    background_type = transparent
     cursor_color = "#aaaaaa"
     foreground_color = "#ebdbb2"
     scrollback_lines = 3000
