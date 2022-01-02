@@ -11,10 +11,31 @@
 
 set $mod Mod4
 
+# Default Workspace Layout <default|stacking|tabbed>
+#
+#workspace_layout tabbed
+workspace_layout default
+
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+#
+#default_border pixel 1
+#default_floating_border normal
+
+# Hide borders
+#
+#hide_edge_borders none
+
+# change borders
+#
+bindsym $mod+u border none
+bindsym $mod+y border pixel 1
+bindsym $mod+n border normal
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #
-font pango:monospace 9
+# font pango:monospace 9
+font xft:URWGothic-Book 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -37,6 +58,17 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 #
 exec --no-startup-id nm-applet
+
+
+################################################################################################
+## sound-section ##
+################################################################################################
+exec --no-startup-id volumeicon
+bindsym $mod+Ctrl+m exec terminator -e 'alsamixer'
+#exec --no-startup-id pulseaudio
+#exec --no-startup-id pa-applet
+#bindsym $mod+Ctrl+m exec pavucontrol
+
 
 # Use pactl to adjust volume in PulseAudio.
 #
@@ -69,6 +101,12 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
+# Screenshot with scrot
+# bindsym Print exec --no-startup-id i3-scrot
+# bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+# bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+
+
 # Screenshots
 #
 # PrtScrn = Full Screen
@@ -76,25 +114,35 @@ bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
 # Super + PrtScrn = Active Window
 bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshot from $(date '+%Y-%m-%d %H:%M:%S').png"
 # Shift + PrtScrn = Selection
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshot from $(date '+%Y-%m-%d %H:%M:%S').png"
+bindsym $mod+p exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshot from $(date '+%Y-%m-%d %H:%M:%S').png"
 
 # Clipboard Screenshots
 #
 # Ctrl + PrtScrn = Clipboard Full Screen
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-# Ctrl + Super + PrtScrn = Clipboard Active Window
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 # Ctrl + Shift + PrtScrn = Clipboard Selection
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+# Ctrl + Super + PrRScrn = Clipboard Active Window
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 #
 floating_modifier $mod
 
-# start a terminal
-#
+
+
+# Start Applications
+# bindsym $mod+F3 exec ranger
+bindsym $mod+t exec --no-startup-id pkill picom
+bindsym $mod+Ctrl+t exec --no-startup-id picom -b
+bindsym $mod+F5 exec terminator -e 'mocp'
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+
+
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec terminator
+
+
 
 # kill focused window
 #
@@ -142,11 +190,11 @@ bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 #
-bindsym $mod+h split h
+bindsym $mod+h split h ;exec notify-send 'tile horizontally'
 
 # split in vertical orientation
 #
-bindsym $mod+v split v
+bindsym $mod+v split v;exec notify-send 'tile vertically'
 
 # enter fullscreen mode for the focused container
 #
@@ -263,27 +311,32 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Color palette used for the terminal
+# If you want your bar to have the same background color as your 
+# terminal background change the line 362 from:
+# background  #2B2C2B
+# to:
+# background $term_background
+# Same logic applied to everything else.
+#set_from_resource $term_background background
+#set_from_resource $term_foreground foreground
+#set_from_resource $term_color0     color0
+#set_from_resource $term_color1     color1
+#set_from_resource $term_color2     color2
+#set_from_resource $term_color3     color3
+#set_from_resource $term_color4     color4
+#set_from_resource $term_color5     color5
+#set_from_resource $term_color6     color6
+#set_from_resource $term_color7     color7
+#set_from_resource $term_color8     color8
+#set_from_resource $term_color9     color9
+#set_from_resource $term_color10    color10
+#set_from_resource $term_color11    color11
+#set_from_resource $term_color12    color12
+#set_from_resource $term_color13    color13
+#set_from_resource $term_color14    color14
+#set_from_resource $term_color15    color15
 
-# Window Colors
-#set $wd_bgclr		#
-#set $wd_ibgclr  	#
-#set $wd_textclr 	#
-#set $wd_itestclr	#
-#set $wd_ugbclr  	#
-
-# Workspace Colors
-#set $ws_gclr		#	
-#set $ws_bgclr		#
-#set $ws_extclr		#
-#set $ws_gbclr		#
-#set $ws_sepclr		#
-
-# Windows colors
-#				Border	Bg	test		indicator
-#client.focused			$wd_bgclr	$wd_bgclr	$wd_extclr	$wd_gclr
-#client.unfocused		$wd_ibgclr	$wd_bgclr	$wd_textclr	$wd_bgclr
-#client.focused_inactive	$wd_ibgclr	$wd_bgclr	$wd_textclr	$wd_bgclr	
-#client.urgent			$wd_ugbclr	$wd_gbclr	$wd_extclr	$wd_gbclr
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -294,24 +347,47 @@ bar {
 	mode dock
 	hidden_state show
 	position bottom
-	font pango:monospace 8
+#	font pango:monospace 8
 
-# Custom colors
-#	colors {
-#		background $ws_bgclr
-#		separator  $ws_sepclr
+## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+#       tray_output primary
+#       tray_output eDP1
 
-		#			border		bg		text
-#		focused_workspace	$ws_bgclr	$ws_bgclr	$ws_textclr 	
-#		inactive_workspace	$ws_ibgclr	$ws_ibgclr	$ws_textclr
-#		urgent_workspace	$ws_ugbclr	$ws_ugbclr	$ws_textclr
-#	}
+       strip_workspace_numbers yes
+   colors {
+        background #222D31
+        statusline #F9FAF9
+        separator  #454947
+
+	# arch linux blue #1794d2
+
+	#                  border  bg 	   text
+        focused_workspace  #F9FAF9 #1794d2 #292F34
+        active_workspace   #595B5B #353836 #FDF6E3
+        inactive_workspace #595B5B #222D31 #EEE8D5
+        binding_mode       #1794d2 #2C2C2C #F9FAF9
+        urgent_workspace   #1794d2 #FDF6E3 #E5201D
+    }
+
 
 	}
+
+#####################################################
+## Autostart applications                          ##
+#####################################################
 
 # Keymap
 #
 exec_always setxkbmap it
+
+exec --no-startup-id dunst
+exec --no-startup-id dunst 
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec_always --no-startup-id setcursor
+exec conky -c $HOME/.config/conky/conky.conf
+
 
 # Display resolution change output with real display
 #
@@ -336,11 +412,20 @@ bindsym $mod+x exec /home/$USER/.config/i3lock/lock.sh
 # for_window [class="firefox"] move to workspace $ws2
 # for_window [class="Nemo"] move to workspace $ws3
 
+# Open specific applications in floating mode
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [title="File Transfer*"] floating enable
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Lxappearance"] floating enable border normal
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pamac-manager"] floating enable
+
 # Windows compose
 #
-exec_always picom -f
+ exec_always picom -f
 
-# Default Workaspace Layout
-#
-workspace_layout tabbed
+
 
