@@ -89,6 +89,7 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 #bindsym $mod+F1 exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 #bindsym $mod+F3 exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
 #bindsym $mod+F2 exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+
 # volume Page_Up Page_Down 
 #
 #bindsym $mod+Page_Up exec --no-startup-id amixer -q set Master 3%+ -q
@@ -128,12 +129,10 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 #
 floating_modifier $mod
 
-
-
 # Start Applications
 # bindsym $mod+F3 exec ranger
-bindsym $mod+t exec --no-startup-id pkill picom
-bindsym $mod+Ctrl+t exec --no-startup-id picom -b
+#bindsym $mod+t exec --no-startup-id pkill picom
+#bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+F5 exec terminator -e 'mocp'
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
@@ -219,9 +218,13 @@ bindsym $mod+a focus parent
 #
 #bindsym $mod+d focus child
 
-# my binding
+# my keybinding
 #
 bindsym $mod+c exec/usr/bin/nm-connection-editor
+bindsym $mod+Ctrl+g exec terminator -e 'grep bindsym $HOME/.config/i3/config  | grep -v "^#" | grep -v "move container to workspace" | grep -v "workspace number" |less'
+bindsym $mod+Ctrl+f exec `which firefox`
+bindsym $mod+Ctrl+t exec `which thunderbird`
+bindsym $mod+Ctrl+n exec `which nemo`
 #
 # end my binding
 
@@ -373,15 +376,17 @@ bar {
 ## Autostart applications                          ##
 #####################################################
 
-# Keymap
-#
 exec_always setxkbmap it
+exec_always --no-startup-id setcursor
+#exec_always --no-startup-id "killall -q /usr/bin/picom; /usr/bin/picom --xrender-sync-fence --config ~/.config/picom/picom.conf -b"
+exec_always --no-startup-id "killall -q /usr/bin/picom; /usr/bin/picom --xrender-sync-fence --config $HOME/.config/picom/picom.conf -b"
+#exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
+exec_always --no-startup-id dunst
 
-exec --no-startup-id dunst
+#exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec_always --no-startup-id setcursor
 exec conky -c $HOME/.config/conky/conky.conf
 
 
@@ -399,29 +404,26 @@ exec_always feh --bg-fill /usr/share/backgrounds/mate/desktop/Ubuntu-Mate-Dark-n
 # bindsym $mod+x exec i3lock
 bindsym $mod+x exec /home/$USER/.config/i3lock/lock.sh
 
-# Program to workspaces
-#
-# Find class name typing 'xprop' and click window
+# Find class/title name typing 'xprop' and click on window
 # take vlue of WM_CLASS(STRING)
 
-# for_window [class="Terminal"] move to workspace $ws1
-# for_window [class="firefox"] move to workspace $ws2
-# for_window [class="Nemo"] move to workspace $ws3
+#for_window [class="Terminal"] move to workspace $ws1
+#for_window [class="firefox"] move to workspace $ws2
+#for_window [class="Thunderbird"] move to workspace $ws3
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [title="File Transfer*"] floating enable
+for_window [title="Terminator Preferences"] floating enable
+for_window [class="Nemo"] floating enable sticky enable
+for_window [class="KeePassXC"] floating enable resize set 800px 600px
+for_window [class="Skype"] floating enable resize set 800px 600px
+for_window [class="VirtualBox Manager"] floating enable resize set 800px 600px
+for_window [class="lightdm-gtk-greeter-settings"] floating enable resize set 800px 600px
 for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable border normal
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Pamac-manager"] floating enable
-for_window [class="Pamac-manager"] floating enable
-
-# Windows compose
-#
- exec_always picom -f
-
-
 
