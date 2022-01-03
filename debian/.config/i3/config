@@ -13,8 +13,8 @@ set $mod Mod4
 
 # Default Workspace Layout <default|stacking|tabbed>
 #
-#workspace_layout tabbed
-workspace_layout default
+workspace_layout tabbed
+#workspace_layout default
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 #
@@ -98,8 +98,8 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 
 # Screen brightness controls
 #
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Screenshot with scrot
 # bindsym Print exec --no-startup-id i3-scrot
@@ -343,7 +343,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 
 bar {
-        #status_command i3status -c /home/$USER/.config/i3status/i3status.conf
+	#status_command i3status -c /home/$USER/.config/i3status/i3status.conf
         status_command i3blocks -c /home/ser/.config/i3blocks/i3blocks.conf
 	mode dock
 	hidden_state show
@@ -427,4 +427,3 @@ for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable border normal
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Pamac-manager"] floating enable
-
