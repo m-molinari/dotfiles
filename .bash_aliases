@@ -33,3 +33,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
+
+#
+# audio
+alias playlist_create='find /PATH/TO/MUSIC/DIRECTORY/ -type f -iname "*.mp3" > playlist.m3u'
