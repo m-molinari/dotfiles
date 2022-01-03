@@ -403,6 +403,10 @@ exec_always feh --bg-fill /usr/share/backgrounds/archlinux/small.png
 # bindsym $mod+x exec i3lock
 bindsym $mod+x exec /home/$USER/.config/i3lock/lock.sh
 
+# Autolock screen after inactivity
+#
+exec xautolock -detectsleep -time 20 -locker "/home/$USER/.config/i3lock/lock.sh"
+
 # Find class/title name typing 'xprop' and click on window
 # take vlue of WM_CLASS(STRING)
 
