@@ -1,5 +1,5 @@
-# list
 #
+# list
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -7,13 +7,29 @@ alias l='ls -CF'
 # remove
 #
 alias rm='rm -i'
+alias cp='cp -i'
 
-# UPDATES
 #
+# Archlinux updates
+alias psyu='sudo pacman -Syu'
+alias ysyu='yay -Syu'
 
-# Archlinux
-alias up='sudo pacman -Syu'
-alias uy='yay -Syu'
 #
-# Debian
-alias ud='sudo apt-get update && sudo apt-get upgrade'
+# Debian updates
+alias uu='sudo apt-get update && sudo apt-get upgrade'
+alias uuu='sudo apt-get update && sudo apt-get dist-upgrade'
+
+#
+# Edit Configurations
+alias confi3='vim $HOME/.config/i3/config'
+alias confbash='vim $HOME/.bashrc'
+alias confalias='vim $HOME/.bash_aliases'
+
+#
+# directories
+alias .='pwd'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'

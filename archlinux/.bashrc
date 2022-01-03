@@ -85,3 +85,7 @@ export LESS="-R"
 # ssh-add
 #
 #ssh-add -l > /dev/null || ssh-add
+
+# id_rsa
+#
+eval $(keychain --eval --quiet  id_rsa ~/.ssh/id_rsa)
