@@ -222,7 +222,7 @@ bindsym $mod+a focus parent
 # my keybinding
 #
 bindsym $mod+c exec /usr/bin/nm-connection-editor
-bindsym $mod+Ctrl+g exec terminator -e 'grep bindsym $HOME/.config/i3/config  | grep -v "^#" | grep -v "move container to workspace" | grep -v "workspace number" |less'
+bindsym $mod+Ctrl+g exec terminator -e 'grep bindsym ~/.config/i3/config  | grep -v "^#" | grep -v "move container to workspace" | grep -v "workspace number" |less'
 bindsym $mod+Ctrl+f exec `which firefox`
 bindsym $mod+Ctrl+t exec `which thunderbird`
 bindsym $mod+Ctrl+n exec `which nemo`
@@ -343,8 +343,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 
 bar {
-	#status_command i3status -c /home/$USER/.config/i3status/i3status.conf
-        status_command i3blocks -c /home/$USER/.config/i3blocks/i3blocks.conf
+	#status_command i3status -c ~/.config/i3status/i3status.conf
+        status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
 	mode dock
 	hidden_state show
 	position bottom
@@ -377,16 +377,15 @@ bar {
 
 exec_always setxkbmap it
 exec_always --no-startup-id setcursor
-#exec_always --no-startup-id "killall -q /usr/bin/picom; /usr/bin/picom --xrender-sync-fence --config ~/.config/picom/picom.conf -b"
-exec_always --no-startup-id "killall -q /usr/bin/picom; /usr/bin/picom --xrender-sync-fence --config $HOME/.config/picom/picom.conf -b"
-#exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
+exec_always --no-startup-id "killall -q /usr/bin/picom; /usr/bin/picom --xrender-sync-fence --config ~/.config/picom/picom.conf -b"
+#exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec_always --no-startup-id dunst
 
 #exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec conky -c $HOME/.config/conky/conky.conf
+exec conky -c ~/.config/conky/conky.conf
 
 
 # Display resolution change output with real display
