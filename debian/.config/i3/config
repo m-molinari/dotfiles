@@ -106,15 +106,14 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 # bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 
-
 # Screenshots
 #
 # PrtScrn = Full Screen
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)" 
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshot_from_$(date '+%Y-%m-%d %H:%M:%S').png"
 # Super + PrtScrn = Active Window
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshot from $(date '+%Y-%m-%d %H:%M:%S').png"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshot_from_$(date '+%Y-%m-%d %H:%M:%S').png"
 # Shift + PrtScrn = Selection
-bindsym $mod+p exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshot from $(date '+%Y-%m-%d %H:%M:%S').png"
+bindsym $mod+p exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshot_from_$(date '+%Y-%m-%d %H:%M:%S').png"
 
 # Clipboard Screenshots
 #
