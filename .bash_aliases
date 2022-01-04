@@ -36,5 +36,5 @@ alias ......='cd ../../../../..'
 
 #
 # audio
-alias playlist_create='find /PATH/TO/MUSIC/DIRECTORY/ -type f -iname "*.mp3" > playlist.m3u'
+alias playlist_create='find . -type f -iname "*.mp3" >> playlist.m3u'
 alias music='vlc -I ncurses --no-video'
