@@ -24,6 +24,11 @@ alias uuu='sudo apt-get update && sudo apt-get dist-upgrade'
 alias ucc='sudo apt-get clean && sudo apt-get autoclean'
 
 #
+# Gentoo
+alias puu='sudo emerge -auDN @world'
+alias pcc='eclean distfiles'
+
+#
 # Edit Configurations
 alias confi3='vim $HOME/.config/i3/config'
 alias confbash='vim $HOME/.bashrc'
