@@ -11,22 +11,25 @@ alias cp='cp -i'
 
 #
 # Archlinux
-alias psyu='sudo pacman -Syu'
-alias pscc='sudo pacman -Scc'
+alias pacman-upgrade='sudo pacman -Syu'
+alias pacman-clean='sudo pacman -Scc'
+alias pacman-check-autoremove='sudo pacman -Qdtq'
+alias pacman-autoremove='sudo pacman -Qdtq | sudo pacman -Rs -'
 
-alias ysyu='yay -Syu'
-alias yscc='yay -Scc'
+alias yay-upgrade='yay -Syu'
+alias yay-clean='yay -Scc'
 
 #
 # Debian
-alias uu='sudo apt-get update && sudo apt-get upgrade'
-alias uuu='sudo apt-get update && sudo apt-get dist-upgrade'
-alias ucc='sudo apt-get clean && sudo apt-get autoclean'
+alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+alias apt-clean='sudo apt-get clean && sudo apt-get autoclean'
 
 #
 # Gentoo
-alias puu='sudo emerge -auDN @world'
-alias pcc='eclean distfiles'
+alias portage-sync='sudo emerge --sync '
+alias portage-upgrade='sudo emerge -auDN @world'
+alias portage-clean='sudo eclean distfiles'
+alias portage-autoremove='emerge -av --depclean'
 
 #
 # Edit Configurations
