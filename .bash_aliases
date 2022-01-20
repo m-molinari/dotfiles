@@ -1,6 +1,7 @@
 #
 # list
 alias ll='ls -alF'
+alias lh='ls -ltrh'
 alias la='ls -A'
 alias l='ls -CF'
 

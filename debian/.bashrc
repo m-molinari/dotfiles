@@ -131,7 +131,7 @@ neofetch --disable resolution os wm theme icons terminal
 
 # private aliases
 #
-[ -f ~/.my_aliases ] && source ~/.my_aliases
+[ -f ~/.bash_aliases_home ] && source ~/.bash_aliases_home
 
 # functions
 #
