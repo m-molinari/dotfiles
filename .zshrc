@@ -28,6 +28,7 @@ _comp_options+=(globdots)
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
+[ -f "$HOME/.bash_aliases_home" ] && source "$HOME/.bash_aliases_home"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
