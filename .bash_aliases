@@ -22,8 +22,9 @@ alias yay-clean='yay -Scc'
 
 #
 # Debian
-alias apt-upgrade='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
-alias apt-clean='sudo apt-get clean && sudo apt-get autoclean'
+alias uu='sudo apt-get update && sudo apt-get upgrade'
+alias uuu='sudo apt-get update && sudo apt-get dist-upgrade'
+alias ucc='sudo apt-get clean && sudo apt-get autoclean'
 
 #
 # Gentoo
@@ -57,3 +58,5 @@ alias music='vlc -I ncurses --no-video'
 #
 # utilities
 alias eyes='redshift -O 4500K -r -P'
+alias cal='ncal -s IT -Mby'
+alias ncal='ncal -s IT -Mby'
