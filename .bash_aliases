@@ -56,4 +56,4 @@ alias music='vlc -I ncurses --no-video'
 
 #
 # utilities
-alias eyes='redshift -O 3500K -r -P'
+alias eyes='redshift -O 4500K -r -P'
