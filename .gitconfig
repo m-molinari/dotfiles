@@ -1,0 +1,5 @@
+[core]
+	editor = vim
+[user]
+	email = localhost@localdomain
+	name = m-molinari
