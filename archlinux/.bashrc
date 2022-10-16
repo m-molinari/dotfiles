@@ -74,7 +74,7 @@ neofetch --disable resolution os wm theme icons terminal
 [ -f ~/.bash_functions ] && source ~/.bash_functions
 
 # grep colored ouput
-export GREP_COLOR="1;36"
+export GREP_COLOR="1;91"
 
 # less colored output
 export LESS="-R"
