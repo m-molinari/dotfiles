@@ -81,8 +81,8 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -102,9 +102,8 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+[ -f ~/.bash_aliases_home ] && source ~/.bash_aliases_home
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -121,20 +120,11 @@ if [ "$PS1" ]; then
 	export PS1="\[\e[32m\][\[\e[m\]\[\e[32m\]\u\[\e[m\]\[\e[33m\]@\[\e[m\]\[\e[1;36m\]\h\[\e[m\]:\[\e[35m\]\w\[\e[m\]\[\e[36m\]]\[\e[m\]\[\e[0;35m\]\\$\[\e[m\] "
 	# new style with newline
 	#export PS1="\[\033[0;31m\]\342\224\214\342\224\200\\[\033[01;32m\]\u\[\033[01;33m\]@\[\033[01;35m\]\h\[\033[0;31m\]]\342\224\200[\[\033[0;34m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\]\\$ \[\e[0m\]"
-
 fi
 
 # neofetch
 #
 neofetch --disable resolution os wm theme icons terminal
-
-# source aliases
-#
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases
-
-# private aliases
-#
-[ -f ~/.bash_aliases_home ] && source ~/.bash_aliases_home
 
 # functions
 #
