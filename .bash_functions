@@ -36,7 +36,7 @@ gitshowlast() {
     git show $(git --no-pager log -n1 | grep commit | awk '{print $2}')
 }
 
-gitlol() {
+gitlog() {
     git log --graph --stat --pretty=format:"%C(red)%H%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(yellow)<%an>%Creset"
 }
 
