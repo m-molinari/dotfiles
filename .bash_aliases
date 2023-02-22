@@ -54,9 +54,3 @@ alias ......='cd ../../../../..'
 # audio
 alias playlist_create='find . -type f -iname "*.mp3" >> playlist.m3u'
 alias music='vlc -I ncurses --no-video'
-
-#
-# utilities
-alias eyes='redshift -O 4500K -r -P'
-alias cal='ncal -s IT -Mby'
-alias ncal='ncal -s IT -Mby'
