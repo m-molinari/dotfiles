@@ -11,6 +11,8 @@ else
 	exit 1
 fi
 
+git pull
+
 if [ "$2" == "dry" ] ; then
 	rsync -avz --dry-run -b --backup-dir=old_dotfiles  --include .[^.]* $DISTRO/ --exclude .git --exclude README.md  $HOME/
 else
