@@ -49,6 +49,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
+alias d='cd $HOME/Desktop'
 
 #
 # audio
