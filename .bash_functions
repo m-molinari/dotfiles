@@ -17,7 +17,7 @@ topmem() {
 }
 
 # Change monitor temperature 
-eyes() {
+eyes_red() {
     redshift -O 5500K -r -P
 }
 
@@ -27,7 +27,7 @@ eyes_reset() {
 }
 
 # Calendar
-cal() {
+calendar() {
     ncal -s IT -Mby
 }
 
