@@ -112,22 +112,30 @@ ssl_verify_cert_and_key () {
     if [ -z $1 ] || [ -z $2 ]; then
         echo "needs 2 arg: cert_file and cert_key"
     fi
-        echo
-        echo -e "cert ${GREEN} $1 ${NC} md5 :"
-        cert_md5=$(openssl x509 -noout -modulus -in $1 | openssl md5)
-        echo $cert_md5
-        echo
+    
+    if [ $(echo $1 | grep -ci key) -gt 0 ]; then
+        KEY=$1
+        CERT=$2
+    else
+        KEY=$2
+        CERT=$1
+    fi
+    echo "----------------------------------------------------------------------"
+    B_md5=$(openssl rsa -noout -modulus -in $KEY | openssl md5)
+    echo -e "${GREEN} $KEY ${NC} md5 :"
+    echo $B_md5
+    echo
+    echo -e "${GREEN} $CERT ${NC} md5 :"
+    A_md5=$(openssl x509 -noout -modulus -in $CERT | openssl md5)
+    echo $A_md5
+    echo
 
-        key_md5=$(openssl rsa -noout -modulus -in $2 | openssl md5)
-        echo -e "key ${GREEN} $2 ${NC} md5 :"
-        echo $key_md5
+    if [ "$A_md5" == "$B_md5" ] ; then
+        echo -e "${GREEN}  OK: cert and key md5 are equal ${NC}"
         echo
-
-        if [ "$cert_md5" == "$key_md5" ] ; then
-            echo -e "${GREEN}  OK: cert and key md5 are equal ${NC}"
-            echo
-        else
-            echo -e "${RED}  KO: cert and key md5 are different ${NC}"
-            echo
-        fi
+    else
+        echo -e "${RED}  KO: cert and key md5 are different !!! ${NC}"
+        echo
+    fi
+    echo "----------------------------------------------------------------------"
 }
