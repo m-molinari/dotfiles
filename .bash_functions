@@ -65,11 +65,11 @@ compression() {
     ${RED} .gz ${NC}             | ${YELLOW} compress   ${NC} |${CYAN}  gzip   file.txt ${NC}
     ${RED} .gz ${NC}             | ${YELLOW} uncompress ${NC} |${CYAN}  gunzip file.txt.gz
 
-    ${RED} .tgz ${NC}            | ${YELLOW} compress   ${NC} |${CYAN}  tar -cvzf  file.txt ${NC}
+    ${RED} .tgz ${NC}            | ${YELLOW} compress   ${NC} |${CYAN}  tar -cvzf file.txt.tgz file.txt ${NC}
     ${RED} .tgz ${NC}            | ${YELLOW} uncompress ${NC} |${CYAN}  tar -xvzf file.txt.tgz
 
-    ${RED} .zip ${NC}            | ${YELLOW} compress   ${NC} |${CYAN}  zip file.txt ${NC}
-    ${RED} .zip ${NC}            | ${YELLOW} uncompress ${NC} |${CYAN}  unzip file.bz2
+    ${RED} .zip ${NC}            | ${YELLOW} compress   ${NC} |${CYAN}  zip file.zip file.txt ${NC}
+    ${RED} .zip ${NC}            | ${YELLOW} uncompress ${NC} |${CYAN}  unzip file.zip
 
     ${RED} .bzip2 || .bz2 ${NC}  | ${YELLOW} compress   ${NC} |${CYAN}  bzip2 file.txt ${NC}
     ${RED} .bzip2 || .bz2 ${NC}  | ${YELLOW} uncompress ${NC} |${CYAN}  bunzip2 -d file.bz2
