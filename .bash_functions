@@ -75,3 +75,59 @@ compression() {
     ${RED} .bzip2 || .bz2 ${NC}  | ${YELLOW} uncompress ${NC} |${CYAN}  bunzip2 -d file.bz2
     "
 }
+
+# Openssl
+#
+
+# openssl show certificate in text mode
+ssl_show_cert() {
+    openssl x509 -text -noout -in $1
+}
+
+# openssl show fingerprint
+ssl_show_fingerprint () {
+    openssl x509 -noout -fingerprint -sha1 -in $1
+}
+
+# openssl show CRL
+ssl_show_crl () {
+    if [ $(echo $1 | grep -ci der ) ]; then
+        openssl crl -inform DER -text -noout -in $1
+    elseif [ $(echo $1 | grep -ci pem ) ]
+        openssl crl -inform PEM -text -noout -in $1
+    fi
+}
+
+# openssl decrypt file
+ssl_decrypt () {
+    if [ -z $1 ] || [ -z $2 ]; then
+        echo "needs 2 args: file_to_decrypt and file_output"
+        echo
+    fi
+    openssl smime -decrypt -verify -inform DER -in $1 -noverify -out $2
+}
+
+# openssl verify cert and key md5 
+ssl_verify_cert_and_key () {
+    if [ -z $1 ] || [ -z $2 ]; then
+        echo "needs 2 arg: cert_file and cert_key"
+    fi
+        echo
+        echo -e "cert ${GREEN} $1 ${NC} md5 :"
+        cert_md5=$(openssl x509 -noout -modulus -in $1 | openssl md5)
+        echo $cert_md5
+        echo
+
+        key_md5=$(openssl rsa -noout -modulus -in $2 | openssl md5)
+        echo -e "key ${GREEN} $2 ${NC} md5 :"
+        echo $key_md5
+        echo
+
+        if [ "$cert_md5" == "$key_md5" ] ; then
+            echo -e "${GREEN}  OK: cert and key md5 are equal ${NC}"
+            echo
+        else
+            echo -e "${RED}  KO: cert and key md5 are different ${NC}"
+            echo
+        fi
+}
