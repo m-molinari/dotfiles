@@ -3,9 +3,22 @@
 "               ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
 "               ██║   ██║██║██╔████╔██║██████╔╝██║
 "               ╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║
-"                ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
+"                ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗ 
 "                 ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+" :PluginInstall
+"
+call plug#begin()
+
+Plug 'scrooloose/syntastic'
+Plug 'pearofducks/ansible-vim'
+Plug 'rodjek/vim-puppet'
+
+call plug#end()
+
 
 " Python stuff
 au BufNewFile,BufRead *.py
