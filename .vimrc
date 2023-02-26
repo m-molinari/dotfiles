@@ -98,9 +98,9 @@ set wildmode=list:longest "Make wildmenu behave like similar to Bash completion
 
 "" Airline
 ""
-let g:airline_section_z = 'TYPE=%y r:%l c:%c percent:%p%%'
-let g:airline_section_y = '%F %M %Y %R'
-
+let g:airline_theme='deus'
+let g:airline_section_z = 'TYPE=%y ENCODING=%{&fileencoding?&fileencoding:&encoding} cursor:%l/%c tot=%L percent:%p%%'
+let g:airline_section_y = '%F %M %R'
 
 "" Syntastic
 ""
