@@ -13,7 +13,7 @@
 "
 call plug#begin()
 
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'pearofducks/ansible-vim'
 Plug 'rodjek/vim-puppet'
 Plug 'vim-airline/vim-airline-themes'
@@ -104,9 +104,9 @@ let g:airline_section_y = '%F %M %Y %R'
 
 "" Syntastic
 ""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
