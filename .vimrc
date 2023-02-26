@@ -30,10 +30,17 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix
 
+set autoindent		" indent automatically
+set smarttab		" smarter tab
+"set shiftwidth=4	" tab is two spaces
+"set tabstop=4		" indentation two spaces
+"set expandtab		" use spaces not tabs
+
 syntax on		" enable syntax
 set mouse-=a		" disable mouse
 set background=dark	" set backround dark
 set history=100		" increase history from 20 to 100
+set encoding=utf-8	" Encoding
 
 set title		" set window title
 set ruler		" show cursor position
@@ -42,17 +49,19 @@ set noerrorbells	" disable beep on errors
 
 set showmatch		" show matching brackets 
 set showmode		" display the current mode
-set showcmd
+set showcmd		" display incomplete command
+
+set wildmenu		" show list
+set wildmode=list:longest,full	" command Tab completion, list matches
 
 set ignorecase		" search insensitive
 set incsearch		" incremental search
-set hlsearch		" enable search highlighting :noh		
+set hlsearch		" enable search highlighting :noh
 
 "set cursorline		" highlight the line currently under cursor
 "set visualbell		" flash the screen instead of beeping on errors.
 
-set scrolloff=4		" Display 5 lines above the cursor
-set encoding=utf-8	" Encoding
+set scrolloff=4		" Display 4 lines above the cursor
 
 "" list section
 set nolist		" Hidden characters
