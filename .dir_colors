@@ -93,40 +93,40 @@ MULTIHARDLINK		01;04		# regular file with more than one link
 .tbz2		00;31
 .ace		00;31
 
-# images cyan
+# images purple
 #
-.jpg		00;35
-.gif		00;35
-.bmp		00;35
-.xbm		00;35
-.xpm		00;35
-.tif		00;35
-.tga		00;35
-.png		00;35
-.jpeg		00;35
-.tiff		00;35
-.xcf		00;35
-.xcf.gz		00;35
-.blend		00;35
-.pcx		00;35
-.ppm		00;35
+.jpg		01;35
+.gif		01;35
+.bmp		01;35
+.xbm		01;35
+.xpm		01;35
+.tif		01;35
+.tga		01;35
+.png		01;35
+.jpeg		01;35
+.tiff		01;35
+.xcf		01;35
+.xcf.gz		01;35
+.blend		01;35
+.pcx		01;35
+.ppm		01;35
 
-# audio green
+# audio cyan
 #
-.mp3		00;32
-.fla		00;32
-.mid		00;32
-.wav		00;32
-.au		00;32
-.nes		00;32
-.smc		00;32
-.fig		00;32
-.sfc		00;32
-.aac		00;32
-.flac		00;32
-.mka		00;32
-.mpc		00;32
-.ogg		00;32
+.mp3		00;36
+.fla		00;36
+.mid		00;36
+.wav		00;36
+.au		00;36
+.nes		00;36
+.smc		00;36
+.fig		00;36
+.sfc		00;36
+.aac		00;36
+.flac		00;36
+.mka		00;36
+.mpc		00;36
+.ogg		00;36
 
 # movie yellow
 #
@@ -153,50 +153,50 @@ MULTIHARDLINK		01;04		# regular file with more than one link
 .fli		00;33
 .flv		00;33
 
-# docs purple
+# docs green
 #
-.pdf		01;36
-.epub		01;36
-.fb2		01;36
-.ps		01;36
-.mobi		01;36
-.txt		01;36
-.odt		01;36 
-.ott		01;36
-.odm		01;36
-.oth		01;36
-.ods		01;36
-.ots		01;36
-.odg		01;36
-.otg		01;36
-.odp		01;36
-.otp		01;36
-.odf		01;36
-.odb		01;36
-.doc		01;36
-.dot		01;36
-.docx		01;36
-.dotx		01;36
-.docm		01;36
-.dotm		01;36
-.xls		01;36
-.xlt		01;36
-.xla		01;36
-.xlsx		01;36
-.xltx		01;36
-.xlsm		01;36
-.xltm		01;36
-.xlam		01;36
-.xlsb		01;36
-.ppt		01;36
-.pot		01;36
-.pps		01;36
-.ppa		01;36
-.pptx		01;36
-.potx		01;36
-.ppsx		01;36
-.ppam		01;36
-.pptm		01;36
-.potm		01;36
-.ppsm		01;36
+.pdf		00;32
+.epub		00;32
+.fb2		00;32
+.ps		00;32
+.mobi		00;32
+.txt		00;32
+.odt		00;32 
+.ott		00;32
+.odm		00;32
+.oth		00;32
+.ods		00;32
+.ots		00;32
+.odg		00;32
+.otg		00;32
+.odp		00;32
+.otp		00;32
+.odf		00;32
+.odb		00;32
+.doc		00;32
+.dot		00;32
+.docx		00;32
+.dotx		00;32
+.docm		00;32
+.dotm		00;32
+.xls		00;32
+.xlt		00;32
+.xla		00;32
+.xlsx		00;32
+.xltx		00;32
+.xlsm		00;32
+.xltm		00;32
+.xlam		00;32
+.xlsb		00;32
+.ppt		00;32
+.pot		00;32
+.pps		00;32
+.ppa		00;32
+.pptx		00;32
+.potx		00;32
+.ppsx		00;32
+.ppam		00;32
+.pptm		00;32
+.potm		00;32
+.ppsm		00;32
 

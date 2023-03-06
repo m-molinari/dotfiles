@@ -139,3 +139,16 @@ ssl_verify_cert_and_key () {
     fi
     echo "----------------------------------------------------------------------"
 }
+
+# DNS
+#
+
+# Get all records for domain
+dns_all_record () {
+    if [ -z $1 ]; then
+        echo "needs domain as arg1"
+        echo
+    fi
+
+    dig +nocmd any +noall +answer $1
+}
