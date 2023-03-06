@@ -17,8 +17,8 @@ alias pacman-clean='sudo pacman -Scc'
 alias pacman-check-autoremove='sudo pacman -Qdtq'
 alias pacman-autoremove='sudo pacman -Qdtq | sudo pacman -Rs -'
 
-alias yay-upgrade='yay -Syu'
-alias yay-clean='yay -Scc'
+alias paru-upgrade='paru -Syu'
+alias paru-clean='paru -Scc'
 
 # Debian
 #
