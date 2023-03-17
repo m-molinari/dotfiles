@@ -40,6 +40,8 @@ alias confbash='vim $HOME/.bashrc'
 alias confalias='vim $HOME/.bash_aliases'
 alias confhosts='vim /etc/hosts'
 alias confresolv='vim /etc/resolv.conf'
+alias reloadbash='source ~/.bashrc'
+alias confprinter='sudo system-config-printer'
 
 # Directories
 #
