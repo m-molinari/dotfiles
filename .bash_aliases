@@ -61,3 +61,12 @@ alias music='vlc -I ncurses --no-video'
 # Duplicity
 alias duplicity_list_backups='duplicity collection-status $1'
 alias duplicity_list_files='duplicity list-current-files $1'
+
+# Various
+alias cal='ncal -s IT -Mby'
+alias moon='curl wttr.in/moon?lang=it'
+
+# Redshift
+alias eyes_red='redshift -O 5500K -r -P'
+alias eyes_reset='redshift -x'
+
