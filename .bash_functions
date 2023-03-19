@@ -23,21 +23,6 @@ topmem() {
     ps auxw   --sort=-%mem | head
 }
 
-# Change monitor temperature 
-eyes_red() {
-    redshift -O 5500K -r -P
-}
-
-# Reset monitor temperature
-eyes_reset() {
-    redshift -x
-}
-
-# Calendar
-calendar() {
-    ncal -s IT -Mby
-}
-
 # Git
 gitshowlast() {
     git show $(git --no-pager log -n1 | grep commit | awk '{print $2}')
