@@ -29,6 +29,12 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
+    
+" Highlight current line trasparent grey
+" set cursorline
+hi cursorline cterm=none term=none
+highlight CursorLine guibg=#303000 ctermbg=240
+nnoremap <F2> :set cursorline! cursorline?<CR>
 
 set autoindent		" indent automatically
 set smarttab		" smarter tab
