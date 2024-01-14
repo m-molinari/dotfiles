@@ -18,9 +18,10 @@ alias pacman-check-autoremove='sudo pacman -Qdtq'
 alias pacman-autoremove='sudo pacman -Qdtq | sudo pacman -Rs -'
 alias save-packages-list='pacman -Qqen > pkglist-repo.txt'
 alias save-packages-list-aur='pacman -Qqem > pkglist-aur.txt'
-
+alias restore-packages='sudo pacman -S --needed - < pkglist-repo.txt'
+alias restore-packages-aur='for i in $(< pkglist-aur.txt); do paru -S $i; done'
 alias paru-upgrade='paru -Syu'
-alias paru-clean='paru -Scc'
+alias paru-clean='paru -Sc'
 
 # Debian
 #
